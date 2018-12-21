@@ -154,7 +154,7 @@ for path, subdirs, files in os.walk(getconfig('path')):
                 os.rename(filename + "tmp2." + fileext, currentfile)
 if did == True:
     print('Tone Maped {} Files'.format())
-if did == False:
+elif did == False:
     print('Did not find any files to tone map')
 else:
     print("I Dont feel so good Mr. Stark....")
