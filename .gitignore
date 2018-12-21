@@ -10,3 +10,5 @@ isvideo\.py
 MediaInfo\.dll
 
 MediaInfo_InfoTip\.dll
+
+ffmpeg\.exe

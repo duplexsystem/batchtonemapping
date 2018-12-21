@@ -131,14 +131,30 @@ def isHDR(filename):
         print("Warning No bit_depth String in {}".format(filename))
     print("File {} is not an HDR Video, Does not use the BT.2020 color space, or has already been converted".format(filename))
     return(False)
-
+did = False
+number = 0
+done = ['']
 for path, subdirs, files in os.walk(getconfig('path')):
     for name in files:
+
         currentfile = '{}\\{}'.format(path, name)
+        if currentfile in done:
+            break
+        done.append(currentfile)
         print(currentfile)
         filename, fileext = currentfile.split('.')
         print("Testing {}". format(currentfile))
         if isVideo(currentfile) == True:
             print('Currentfile is a video')
             if isHDR(currentfile) == True:
-                os.system ('ffmpeg.exe  -i {} -vf zscale=transfer=linear,tonemap=tonemap=hable:param=1.0:desat=0:peak=10,zscale=transfer=bt709,format=yuv420p -c:v {} -c:a {} {}'.format(currentfile, getoptivcodec(getvcodec(currentfile), getconfig('hq')), getoptiacodec(getacodec(currentfile), getconfig('hq')), filename + "tmp2." + fileext))
+                did = True
+                number = number + 1
+                os.system ('ffmpeg.exe  -i "{}" -vf zscale=transfer=linear,tonemap=tonemap=hable:param=1.0:desat=0:peak=10,zscale=transfer=bt709,format=yuv420p -c:v {} -c:a {} "{}"'.format(currentfile, getoptivcodec(getvcodec(currentfile), getconfig('hq')), getoptiacodec(getacodec(currentfile), getconfig('hq')), filename + "tmp." + fileext))
+                os.remove(currentfile)
+                os.rename(filename + "tmp2." + fileext, currentfile)
+if did == True:
+    print('Tone Maped {} Files'.format())
+if did == False:
+    print('Did not find any files to tone map')
+else:
+    print("I Dont feel so good Mr. Stark....")
