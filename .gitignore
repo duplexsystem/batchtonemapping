@@ -18,3 +18,5 @@ configutil\.py
 ffmpeg\.py
 
 mainscript\.py
+
+getmediainfo\.py
