@@ -12,3 +12,9 @@ MediaInfo\.dll
 MediaInfo_InfoTip\.dll
 
 ffmpeg\.exe
+
+configutil\.py
+
+ffmpeg\.py
+
+mainscript\.py
