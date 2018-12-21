@@ -1,0 +1,12 @@
+
+__pycache__/
+
+config\.ini
+
+ishdr\.py
+
+isvideo\.py
+
+MediaInfo\.dll
+
+MediaInfo_InfoTip\.dll
