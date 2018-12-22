@@ -36,6 +36,7 @@ videoext = ['asf','avi','mov','mp4','mpegts','ts','mkv','wmv']
 hwaccel = False
 nonfree = False
 hq = False
+deleteorig = False
 path =  (File Path to Scan for tone mapping)
 ```
 videoext: These are the extensions that will be counted as video files
@@ -45,6 +46,8 @@ hwaccel: This enable/disables Hardware acceleration support which does not exist
 nonfree: Set this to true if you compiled your own non-free version of ffmepg: otherwise, leave it false.
 
 hq: Enable this if you want higher quality codec fallbacks
+
+deleteorig: Enable this if you want the file to be deleted after completion !WARNING! IF THERE IS A FAILURE TONE MAPPING THE FILE, THE ORIGNAIL FILE WILL STILL BE DELETED!
 
 path: Folder you want to be tone mapped
 
