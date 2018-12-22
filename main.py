@@ -149,7 +149,7 @@ for path, subdirs, files in os.walk(getconfig('path')):
             if isHDR(currentfile) == True:
                 did = True
                 number = number + 1
-                os.system ('ffmpeg.exe  -i "{}" -vf zscale=transfer=linear,tonemap=tonemap=hable:param=1.0:desat=0:peak=10,zscale=transfer=bt709,format=yuv420p -c:v {} -c:a {} "{}"'.format(currentfile, getoptivcodec(getvcodec(currentfile), getconfig('hq')), getoptiacodec(getacodec(currentfile), getconfig('hq')), filename + "tmp." + fileext))
+                os.system ('ffmpeg -i "{}" -vf zscale=transfer=linear,tonemap=tonemap=hable:param=1.0:desat=0:peak=10,zscale=transfer=bt709,format=yuv420p -c:v {} -c:a {} "{}"'.format(currentfile, getoptivcodec(getvcodec(currentfile), getconfig('hq')), getoptiacodec(getacodec(currentfile), getconfig('hq')), filename + "tmp." + fileext))
                 os.remove(currentfile)
                 os.rename(filename + "tmp2." + fileext, currentfile)
 if did == True:
