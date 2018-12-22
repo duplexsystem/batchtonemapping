@@ -7,23 +7,24 @@
 - Do you need a place to rant about your life problems and current dilemmas?
   - You’re on your own buddy!
   
-Batch Tone Mapper if a fast+ python script that can tone map an unlimited++ number of files from HDR to SDR. Because it is built on top of ffmpeg it can support any virtually format+++!
+Batch Tone Mapper is a fast+ python script that can tone map an unlimited++ number of files from HDR to SDR. Because it is built on top of ffmpeg it can support any virtually format+++!
 
 # Installation 
 
-- Download Batch Tone Mapper (if you need help with this you probably shouldn’t be tone mapping files anyway)
+- Download Batch Tone Mapper (if you need help with this, you probably shouldn’t be tone mapping files anyway)
 
-- Download ffmpeg you have two options:
-    - Download the latest build from here(Recommended for people with little time or technical knowledge): https://www.ffmpeg.org/download.html#build-windows
-    - Compile your own Non-Free build using the ffmpeg source code(This is Recommended if you have time and technical knowledge because in some cases is delivers better quality): https://trac.ffmpeg.org/wiki/CompilationGuide
+- Download ffmpeg. You have two options:
+    - Download the latest build from here (Recommended for people with little time or technical knowledge): https://www.ffmpeg.org/download.html#build-windows
+    - Compile your own Non-Free build using the ffmpeg source code (This is Recommended if you have time and technical knowledge. This is because in some cases it delivers better quality): https://trac.ffmpeg.org/wiki/CompilationGuide
 - Copy only ffmpeg.exe (and any external libraries if you compiled your own build) into a folder with the rest of the files
+
 - Download Media info 
-    - Windows https://mediaarea.net/en/MediaInfo/Download/Windows
-        - You must download the DLL WITHOUT installer (note architecture is your python version not necessarily your system architecture)
+    - Windows. https://mediaarea.net/en/MediaInfo/Download/Windows
+        - You must download the DLL WITHOUT installer (note: architecture is your python version not necessarily your system architecture)
         
-    - Linux Someone is going to have to figure this out because I don’t have a Linux machine to test this on (I know I could use a virtual machine but I am lazy)
+    - Linux. Someone is going to have to figure this out because I don’t have a Linux machine to test this on (I know I could use a virtual machine but I am lazy)
     
-    - MacOS
+    - MacOS.
         - Really?
 # Configuration
 
@@ -39,9 +40,9 @@ path =  (File Path to Scan for tone mapping)
 ```
 videoext: These are the extensions that will be counted as video files
 
-hwaccel: This enable/disables Hardware acceleration support witch does not exist yet but is planed (good to leave as False to prevent future errors)
+hwaccel: This enable/disables Hardware acceleration support which does not exist yet, but is planned (good to leave as False to prevent future errors)
 
-nonfree: Set this to true if you compiled your own non-free version of ffmepg otherwise leave it false.
+nonfree: Set this to true if you compiled your own non-free version of ffmepg: otherwise, leave it false.
 
 hq: Enable this if you want higher quality codec fallbacks
 
