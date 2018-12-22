@@ -21,7 +21,7 @@ Batch Tone Mapper if a fast+ python script that can tone map an unlimited++ numb
     - Windows https://mediaarea.net/en/MediaInfo/Download/Windows
         - You must download the DLL WITHOUT installer (note architecture is your python version not necessarily your system architecture)
         
-    - Linux Someone is going to have to figure this out because I don’t have a Linux machine to test this on (I know I could use a virtual machine but I a lazy)
+    - Linux Someone is going to have to figure this out because I don’t have a Linux machine to test this on (I know I could use a virtual machine but I am lazy)
     
     - MacOS
         - Really?
