@@ -11,6 +11,11 @@ Batch Tone Mapper is a fast+ python script that can tone map an unlimited++ numb
 
 # Installation 
 
+- Install Python 3.7
+
+- Install pymediainfo
+  - `python -m install pyedmediainfo`
+
 - Download Batch Tone Mapper (if you need help with this, you probably shouldn’t be tone mapping files anyway)
 
 - Download ffmpeg. You have two options:
@@ -28,8 +33,8 @@ Batch Tone Mapper is a fast+ python script that can tone map an unlimited++ numb
         - Really?
 # Configuration
 
-You need to make a config.ini file
-Sample:
+You need to make a config.ini file.
+Config.ini Sample:
 ```
 [settings]
 videoext = ['asf','avi','mov','mp4','mpegts','ts','mkv','wmv']
