@@ -33,7 +33,7 @@ def getoptivcodec(codec, hq):
         return(False)
     elif codec.lower().replace("-", "") == "vc1":
         #vc1 encoding is not supported by ffmpeg so codec is changed to h.264
-        retunr('libx264')
+        return('libx264')
     elif codec.lower().replace("-", "") in "wmv":
         #upgrades codec to wmv3 if wmv1/2 who wants to use outdated codecs anyway
         return('wmv3')
@@ -136,7 +136,6 @@ number = 0
 done = ['']
 for path, subdirs, files in os.walk(getconfig('path')):
     for name in files:
-
         currentfile = '{}\\{}'.format(path, name)
         if currentfile in done:
             break
