@@ -151,9 +151,10 @@ for path, subdirs, files in os.walk(getconfig('path')):
                 os.system ('ffmpeg -i "{}" -vf zscale=transfer=linear,tonemap=tonemap=hable:param=1.0:desat=0:peak=10,zscale=transfer=bt709,format=yuv420p -c:v {} -c:a {} "{}"'.format(currentfile, getoptivcodec(getvcodec(currentfile), getconfig('hq')), getoptiacodec(getacodec(currentfile), getconfig('hq')), filename + "tmp." + fileext))
                 if getconfig(deleteorig) == True:
                     os.remove(currentfile)
+                    os.rename(filename + "tmp." + fileext, currentfile)
                 else:
-                    os.rename(currentfile, currentfile + ".bak")
-                os.rename(filename + "tmp2." + fileext, currentfile)
+                    os.rename(currentfile, filename + "SDR." + fileext)
+                
 if did == True:
     print('Tone Maped {} Files'.format())
 elif did == False:
