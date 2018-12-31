@@ -136,12 +136,12 @@ number = 0
 done = ['']
 for path, subdirs, files in os.walk(getconfig('path')):
     for name in files:
-        currentfile = '{}\\{}'.format(path, name)
+        currentfile = '{}/{}'.format(path, name)
         if currentfile in done:
             break
         done.append(currentfile)
         print(currentfile)
-        filename, fileext = currentfile.split('.')
+        filename, fileext = currentfilersplit(".", 1)
         print("Testing {}". format(currentfile))
         if isVideo(currentfile) == True:
             print('Currentfile is a video')
