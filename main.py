@@ -107,7 +107,7 @@ def isVideo(file):
     if ext in listgen('videoext'):
         print("Video")
         return(True)
-    print(listgen(getconfig("videoext"))
+    print(listgen(getconfig("videoext")))
     print(ext)
     print("!video")
     return(False)
