@@ -107,7 +107,7 @@ def isVideo(file):
     if ext in listgen('videoext'):
         print("Video")
         return(True)
-    print(listgen(getconfig("videoext"))
+    print(listgen(getconfig("videoext")))
     print(ext)
     print("!video")
     return(False)
@@ -141,7 +141,7 @@ for path, subdirs, files in os.walk(getconfig('path')):
             break
         done.append(currentfile)
         print(currentfile)
-        filename, fileext = currentfilersplit(".", 1)
+        filename, fileext = currentfile.split(".", 1)
         print("Testing {}". format(currentfile))
         if isVideo(currentfile) == True:
             print('Currentfile is a video')
@@ -149,14 +149,14 @@ for path, subdirs, files in os.walk(getconfig('path')):
                 did = True
                 number = number + 1
                 os.system ('ffmpeg -i "{}" -vf zscale=transfer=linear,tonemap=tonemap=hable:param=1.0:desat=0:peak=10,zscale=transfer=bt709,format=yuv420p -c:v {} -c:a {} "{}"'.format(currentfile, getoptivcodec(getvcodec(currentfile), getconfig('hq')), getoptiacodec(getacodec(currentfile), getconfig('hq')), filename + "tmp." + fileext))
-                if getconfig(deleteorig) == True:
+                if getconfig("deleteorig") == True:
                     os.remove(currentfile)
                     os.rename(filename + "tmp." + fileext, currentfile)
                 else:
                     os.rename(currentfile, filename + "SDR." + fileext)
                 
 if did == True:
-    print('Tone Maped {} Files'.format())
+    print('Tone Maped {} Files'.format(number))
 elif did == False:
     print('Did not find any files to tone map')
 else:
